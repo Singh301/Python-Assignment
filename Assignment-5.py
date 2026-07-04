@@ -75,15 +75,15 @@ print('6. Search for a specific character in the string "this is python programm
 def search_character(text,char) :
     found = False
     for ch in text :
-        ch == char
-        found = True
-        break
+        if ch == char :
+            found = True
+            break
     if found :
         print(char, "is present in the string")
     else :
         print(char, "is not present in the string")
-
-
-
-    
-    
+def main():
+    data = "this is python programming place"
+    search_char = input("Enter the chracter to search : ")
+    search_character(data,search_char)
+main()
