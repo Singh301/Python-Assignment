@@ -227,3 +227,51 @@ def main() :
     print("Original String : ", data)
     print("After Removing Spaces in String : ", output)
 main()
+print('18. Sort characters alphabetically in "programming" → "aggimmnoprr".')
+def sort_string(text):
+    text = list(text)
+    for i in range(len(text)):
+        for j in range(i + 1, len(text)):
+            if text[i] > text[j]:
+                text[i], text[j] = text[j], text[i]
+    result = ""
+    for ch in text:
+        result += ch
+    print(result)
+def main():
+    data = "programming"
+    sort_string(data)
+main()
+print('19. Swap cases of all letters in "Python Is Fun" → "pYTHON iS fUN".')
+def swap_case(text):
+    result = ""
+    for ch in text:
+        if ch.islower():
+            result += ch.upper()
+        elif ch.isupper():
+            result += ch.lower()
+        else:
+            result += ch
+    print(result)
+def main():
+    data = "Python Is Fun"
+    swap_case(data)
+main()
+print("20. Find frequency of each character in \"banana\" → { 'b':1, 'a':3, 'n':2 }.")
+def frequency(text):
+    checked = ""
+
+    for ch in text:
+        if ch not in checked:
+            count = 0
+
+            for letter in text:
+                if ch == letter:
+                    count += 1
+
+            print(ch, ":", count)
+            checked += ch
+def main():
+    data = "banana"
+    frequency(data)
+main()
