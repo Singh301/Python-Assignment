@@ -87,3 +87,143 @@ def main():
     search_char = input("Enter the chracter to search : ")
     search_character(data,search_char)
 main()
+print('7. Find the greatest and smallest characters from the string "venugopaliyer".')
+def find_greatest_smallest(string) :
+    smallest = string[0]
+    greatest = string[0]
+    for ch in string :
+        if ch < smallest :
+            smallest = ch
+        if ch > greatest :
+            greatest = ch
+    print("Smallest Chracter in string : ", smallest)
+    print("Greatest Chracter in String : ", greatest)
+def main():
+    text = "venugopaliyer"
+    find_greatest_smallest(text)
+main()
+print('8. Count the total occurrences of a specific letter in the string\n"this is python programming place".')
+def count_occurrances(text,letter) :
+    count = 0 
+    for ch in text :
+        if ch == letter :
+            count += 1
+    print(f"{letter} occurs {count} times")
+def main():
+    string = "this is python programming place"
+    letter = input("Enter Letter to Search : ")
+    count_occurrances(string,letter)
+main()   
+print('9. Replace "python" with "javascript" in the string "python developer python engineer python holder".') 
+def replace_word(text) :
+    result = text.replace("python","javascript")
+    return result
+def main():
+    data = "python developer python engineer python holder"
+    output = replace_word(data)
+    print("Original String : ")
+    print(data)
+    print("Updated String : ")
+    print(output)
+main()
+print('10. Print alternate letters from the string "How are you sir".')
+def alternate_letter(text) :
+    result = ""
+    for i in range(len(text)) :
+        if i % 2 == 0 :
+            result += text[i]
+    return result
+def main():
+    data = "How are you sir"
+    output = alternate_letter(data)
+    print("String with Alternate Letter : ", output)
+main()
+print('11. Convert the string "qwertyuiopasdfghjklzxcvbnm" to "abcdefghijklmnopqrstuvwxyz".')
+def convert_string(text):
+    result = ""
+    for ch in "abcdefghijklmnopqrstuvwxyz" : 
+        for letter in text :
+            if ch == letter :
+                result += letter
+    return result
+def main():
+    data = "qwertyuiopasdfghjklzxcvbnm"
+    print("Oroginal Data : ", data)
+    print("Converted String : ", convert_string(data))
+main()
+print("Extra String Questions : ")
+print('2. Check if the string is a palindrome (e.g., "madam" → Palindrome, "hello" → Not palindrome)')
+def check_palindrome(text) :
+    reverse = ""
+    for ch in text :
+        reverse = ch + reverse
+    if text == reverse :
+        print(text,"String is Palindrome")
+    else :
+        print(text,"String is not palindrome")
+def main():
+    data = input("Enter the string to check : ")
+    check_palindrome(data)
+main()
+print('13. Count spaces, digits, alphabets, and special characters in "Python 3.9 is awesome!!".')
+def count_character(text) :
+    spaces = 0 
+    digits = 0
+    alphabets = 0
+    special_character = 0 
+    for ch in text :
+        if ch.isalpha():
+            alphabets += 1
+        elif ch.isdigit() :
+            digits += 1 
+        elif ch.isspace():
+            spaces += 1
+        else :
+            special_character += 1
+    print("Alphabets : ",alphabets)
+    print("Specials Chracter : ", special_character)
+    print("Digits : ", digits)
+    print("Spaces : ", spaces)
+def main() : 
+    data = "Python 3.9 is awesome!!"
+    count_character(data)
+main()
+print('14. Find the longest word in the string "Python programming is interesting".')
+def longest_word(text) :
+    words = text.split()
+    print(words)
+    longest = words[0]
+    for word in words :
+        if len(word) > len(longest) :
+            longest = word
+    return longest
+def main() : 
+    string = "Python programming is interesting"
+    result = longest_word(string)
+    print("Longest String : ", result)
+main()
+print('15. Capitalize the first letter of each word in "welcome to python world".')
+def capitalize_word(text) :
+    result = ""
+    for word in text.split() :
+        result += word.capitalize() + " "
+    return result
+def main() : 
+    string = "welcome to python world"
+    output = capitalize_word(string)
+    print("Original String : ", string)
+    print("Capitalize String : ", output)
+main()
+print('16. Remove all spaces from "How are you sir".')
+def remove_spaces(text) : 
+    result = ""
+    for ch in text : 
+        if ch != " " : 
+            result += ch 
+    return result 
+def main() :
+    data = "How are you sir"
+    output = remove_spaces(data)
+    print("Original String : ", data)
+    print("After Removing Spaces in String : ", output)
+main()
